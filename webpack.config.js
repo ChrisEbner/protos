@@ -9,6 +9,12 @@ const precss = require('precss')
 const nested = require('postcss-nested')
 const comments = require('postcss-discard-comments')
 
+
+const extractCommons = new webpack.optimize.CommonsChunkPlugin({
+    name: 'commons',
+    filename: 'commons.js'
+})
+
 module.exports = function(env) {
     return {
         devtool: 'source-map',
@@ -56,9 +62,10 @@ module.exports = function(env) {
                 // disable:false,
                 // allChunks: true
             }),
+            extractCommons
         ],
         output: {
-            filename: "bundle.js",
+            filename: "[name].bundle.js",
             path: path.resolve(__dirname, 'dist')
         },
         devServer: {
