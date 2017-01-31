@@ -1,7 +1,7 @@
 {
   "name": "protos",
   "version": "0.1.0",
-  "description": "",
+  "description": "This is a prototype test project.",
   "main": "index.js",
   "scripts": {
     "build": "node_modules/.bin/webpack",
